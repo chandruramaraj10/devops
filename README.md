@@ -6,7 +6,8 @@ It runs with Gunicorn in a non-root Docker container.
 ## Build the image
 
 ```bash
-cd /home/worktual/Music/DEVOPS/python-basic-web-app
+git clone https://github.com/chandruramaraj10/devops.git
+cd devops
 sudo docker build -t python-basic-web:v1 .
 ```
 
