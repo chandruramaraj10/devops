@@ -12,7 +12,7 @@ app = Flask(__name__)
 def home():
     return render_template(
         "index.html",
-        app_name=os.getenv("APP_NAME", "Python Docker App"),
+        app_name=os.getenv("APP_NAME", "Monkey Flask App"),
         environment=os.getenv("APP_ENV", "development"),
         hostname=socket.gethostname(),
         current_time=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),

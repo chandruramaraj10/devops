@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A basic Python web application running in Docker.">
+    <meta name="description" content="A basic Python Flask web application.">
     <title>{{ app_name }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
     <main class="card">
-      <p class="eyebrow">FLASK + DOCKER</p>
+      <p class="eyebrow">PYTHON + FLASK</p>
       <h1>{{ app_name }}</h1>
       <p class="intro">
-        Your Python application is running successfully inside a container.
+        Your Python web application is running successfully.
       </p>
 
       <section class="details" aria-label="Application details">
@@ -25,7 +25,7 @@
           <strong>{{ environment }}</strong>
         </div>
         <div>
-          <span>Container hostname</span>
+          <span>Server hostname</span>
           <strong>{{ hostname }}</strong>
         </div>
         <div>

@@ -1,46 +1,29 @@
-# Python Basic Web App
+# Monkey Flask Web App
 
-A small Flask web application with a responsive page and a `/health` endpoint.
-It runs with Gunicorn in a non-root Docker container.
+A small Flask application with a responsive monkey-themed background and a
+`/health` endpoint.
 
-## Build the image
+## Run locally
 
 ```bash
 git clone https://github.com/chandruramaraj10/devops.git
 cd devops
-sudo docker build -t python-basic-web:v1 .
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python app.py
 ```
 
-## Run the container
+Open <http://localhost:8000> in a browser.
+
+Check the health endpoint in another terminal:
 
 ```bash
-sudo docker run \
-  --name python-basic-web \
-  -d \
-  -p 8080:8000 \
-  -e APP_NAME="My Python App" \
-  -e APP_ENV="docker" \
-  python-basic-web:v1
+curl http://localhost:8000/health
 ```
 
-Open <http://localhost:8080> in a browser.
-
-Check the health endpoint:
+You can customize the displayed name and environment with variables:
 
 ```bash
-curl http://localhost:8080/health
-```
-
-View logs and container health:
-
-```bash
-sudo docker logs -f python-basic-web
-sudo docker inspect python-basic-web --format '{{json .State.Health}}'
-```
-
-Stop and remove the container:
-
-```bash
-sudo docker stop python-basic-web
-sudo docker rm python-basic-web
+APP_NAME="My Monkey App" APP_ENV="local" python app.py
 ```
